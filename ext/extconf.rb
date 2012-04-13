@@ -15,9 +15,9 @@
 ################################################################################
 
 require 'mkmf'
-require 'generate/generate_reason'
-require 'generate/generate_const'
-require 'generate/generate_structs'
+require './generate/generate_reason'
+require './generate/generate_const'
+require './generate/generate_structs'
 
 include_path = ''
 if RUBY_PLATFORM =~ /mswin32/
@@ -25,7 +25,7 @@ if RUBY_PLATFORM =~ /mswin32/
   dir_config('mqm', include_path, '.')
 else
   include_path = '/opt/mqm/inc'
-  #dir_config('mqm', include_path, '/opt/mqm/lib')
+  dir_config('mqm', include_path, '/opt/mqm/lib')
 end
 
 have_header('cmqc.h')

@@ -9,10 +9,10 @@ end
 
 spec = Gem::Specification.new do |s|
   s.name = 'rubywmq'
-  s.version = '1.1.0'
-  s.author = 'Reid Morrison'
-  s.email = 'rubywmq@gmail.com'
-  s.homepage = 'http://www.reidmorrison.com/rubywmq'
+  s.version = '1.1.1'
+  s.author = 'Reid Morrison, Carilda A Thomas'
+  s.email = 'rubywmq@gmail.com, carilda.thomas@gmail.com'
+  s.homepage = 'http://www.reidmorrison.com/rubywmq, https://github.com/carilda/rubywmq'
   s.platform = Gem::Platform::CURRENT
   s.summary = 'Ruby interface into WebSphere MQ (MQSeries)'
   s.description = 'RubyWMQ is a Ruby interface into WebSphere MQ, previously called MQSeries'
@@ -24,7 +24,7 @@ spec = Gem::Specification.new do |s|
   s.rubyforge_project = 'rubywmq'
   s.test_file = 'tests/test.rb'
   s.has_rdoc = false
-  s.required_ruby_version = '>= 1.8.3'
+  s.required_ruby_version = '>= 1.9.3'
   s.requirements << 'WebSphere MQ v5.3, v6 or v7 Client or Server'
 end
 if $0 == __FILE__

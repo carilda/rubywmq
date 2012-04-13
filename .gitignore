@@ -5,5 +5,6 @@ ext/lib/wmq_const_admin.rb
 ext/wmq_reason.c
 ext/*.o
 ext/wmq.so
-nbproject/private/*
+nbproject/*
+.project
 rubywmq*.gem

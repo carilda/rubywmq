@@ -1,5 +1,5 @@
 == Description
-   rubywmq - RubyWMQ is a Ruby interface into WebSphere MQ, previously called MQSeries
+   rubywmq - RubyWMQ is a Ruby interface into WebSphere MQ, previously called MQSeries. This is a fork to handle ruby 1.9.3, debian which for several reasons will not build.
 
 == Synopsis
    require 'wmq'

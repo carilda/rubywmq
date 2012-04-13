@@ -24,6 +24,7 @@ class GenerateReason
     last_reason = nil
     str = ''
     GenerateReason.extract_const(filename,prefix).each do |item|
+      puts "last_rc: #{last_rc}, item[1]: #{item[1]}"
       if last_rc == item[1]
         str << "        case %-30s: return \"#{item[0]} or #{last_reason}[#{item[1]}]\";\n" % item[0]
         last_rc = nil
