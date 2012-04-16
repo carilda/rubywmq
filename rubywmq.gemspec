@@ -3,8 +3,9 @@ require 'date'
 spec = Gem::Specification.new do |s|
   s.name = 'rubywmq'
   s.version = '1.1.1'
+  s.date = '2012-04-16'
   s.author = 'Reid Morrison, Carilda A Thomas'
-  s.email = 'rubywmq@gmail.com, carilda.thomas@gmail.com'
+  s.email = 'carilda.thomas@gmail.com'
   s.homepage = 'http://www.reidmorrison.com/rubywmq, https://github.com/carilda/rubywmq'
   s.platform = Gem::Platform::RUBY
   s.summary = 'Ruby interface into WebSphere MQ (MQSeries) [updated]'

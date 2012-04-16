@@ -1,21 +1,26 @@
 class GenerateReason
 
+  require 'set'
+
   #Extract Error Code Constants from Header files  
   def GenerateReason.extract_const(filename, const_prefix)
     @constants = []
+    have2 = Set.new
     File.open(filename) do |file|
       file.each do |line|
         line.rstrip!
         # Skip empty and comment lines
         if line.length > 0 && line !~ /^\s*\/\*/
           if match = /\s*#define\s+(#{const_prefix}\w+)[\(\s]+([-\dx]+)/.match(line)
+            next if have2.include?(match[2])
+            have2.add(match[2])
             @constants << [match[1], match[2]]
-          end
-        end
-      end
-    end
+          end     # if match
+        end     # if non-blank line
+      end     # each line
+    end     # file
     @constants
-  end
+  end     # extract_const
   
   #Extract Error Code Constants from Header files  
   # Uses lazy print to collect duplicate values
@@ -24,7 +29,6 @@ class GenerateReason
     last_reason = nil
     str = ''
     GenerateReason.extract_const(filename,prefix).each do |item|
-      puts "last_rc: #{last_rc}, item[1]: #{item[1]}"
       if last_rc == item[1]
         str << "        case %-30s: return \"#{item[0]} or #{last_reason}[#{item[1]}]\";\n" % item[0]
         last_rc = nil

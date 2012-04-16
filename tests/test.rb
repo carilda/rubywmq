@@ -1,5 +1,5 @@
 # Shift include path to use locally built copy of rubywmq - For testing dev builds only
-#$:.unshift '../lib'
+$:.unshift '../lib'
 
 require 'rubygems'
 require 'wmq/wmq'
