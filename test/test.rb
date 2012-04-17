@@ -1,15 +1,19 @@
 # Shift include path to use locally built copy of rubywmq - For testing dev builds only
-$:.unshift '../lib'
+#$:.unshift '../lib'
+#$:.unshift '../ext/lib'
 
 require 'rubygems'
 require 'wmq/wmq'
 require 'wmq/wmq_const_admin'
+#require 'wmq'
+#require 'wmq_const_admin'
 require 'test/unit'
-class TestTest < Test::Unit::TestCase
+
+class WmqTest < Test::Unit::TestCase
 
   def setup
     puts '****** setup: start ******'
-    @queue_manager = WMQ::QueueManager.new(:q_mgr_name => 'REID') #, :connection_name=>'localhost(1414)')
+    @queue_manager = WMQ::QueueManager.new(:q_mgr_name => 'venus.queue.manager', :connection_name=>'localhost(1414)')
     @queue_manager.connect
 
     # Create Queue and clear any messages from the queue
@@ -325,4 +329,4 @@ class TestTest < Test::Unit::TestCase
     end
   end
   
-end
+end     # class WmqTest

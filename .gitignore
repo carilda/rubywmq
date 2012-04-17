@@ -8,3 +8,4 @@ ext/wmq.so
 nbproject/*
 .project
 rubywmq*.gem
+ext/*.out
