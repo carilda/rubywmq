@@ -162,6 +162,6 @@ end
 
 if $0 == __FILE__
   path = ARGV[0] || raise("Mandatory parameter: 'WebSphere MQ Include path' is missing")
-  path = path + '/'
-  GenerateConst.generate(path)
+  target = ARGV[1] || '.'
+  GenerateConst.generate(path, target)
 end

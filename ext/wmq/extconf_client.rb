@@ -20,9 +20,9 @@
 #        Windows, Solaris and Linux
 #
 require 'mkmf'
-require '../../generate/generate_reason'
-require '../../generate/generate_const'
-require '../../generate/generate_structs'
+require './generate/generate_reason'
+require './generate/generate_const'
+require './generate/generate_structs'
 
 include_path = ''
 unless (RUBY_PLATFORM =~ /win/i) || (RUBY_PLATFORM =~ /solaris/i) || (RUBY_PLATFORM =~ /linux/i)
@@ -32,8 +32,8 @@ unless (RUBY_PLATFORM =~ /win/i) || (RUBY_PLATFORM =~ /solaris/i) || (RUBY_PLATF
   
   # Generate Source Files # Could check if not already present
   GenerateReason.generate(include_path+'/')
-  GenerateConst.generate(include_path+'/', '../../lib/wmq')
-  GenerateStructs.new(include_path+'/', '../../generate').generate
+  GenerateConst.generate(include_path+'/', './lib/wmq')
+  GenerateStructs.new(include_path+'/', './generate').generate
   
   have_header('cmqc.h')
   create_makefile('wmq_client')

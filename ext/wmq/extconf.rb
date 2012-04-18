@@ -28,6 +28,7 @@ else
   dir_config('mqm', include_path, '/opt/mqm/lib')
 end
 
+# this will add /opt/mqm/inc to the include path in the Makefile
 have_header('cmqc.h')
 
 # Check for WebSphere MQ Server library
@@ -37,7 +38,7 @@ end
 
 # Generate Source Files
 GenerateReason.generate(include_path+'/')
-GenerateConst.generate(include_path+'/', 'lib')
+GenerateConst.generate(include_path+'/', '../../lib/wmq/')
 GenerateStructs.new(include_path+'/', 'generate').generate
 
 # Generate Makefile
