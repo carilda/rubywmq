@@ -1,5 +1,5 @@
 == Description
-   rubywmq - RubyWMQ is a Ruby interface into WebSphere MQ, previously called MQSeries. This is a fork to handle ruby 1.9.3, debian which for several reasons will not build.
+   rubywmq - RubyWMQ is a Ruby interface into WebSphere MQ, previously called MQSeries. This is a fork to handle ruby 1.9.3, which for several reasons failed to build on debian mint. The target usage is Rails 3.2.1.
 
 == Synopsis
    require 'wmq'
@@ -17,13 +17,23 @@
 
    Extracting the source code package:
    * unzip package.zip
-   * tar -xvf package.tar
+   * tar xvf package.tar
 
    cd ext/wmq
    Edit the file build.sh and edit the location of WebSphere MQ (if not in /opt/mqm)
    Also edit extconf.rb and extconf_client.rb with the location of WebSphere MQ (if not in /opt/mqm)
 
-   Run build.sh
+   Run build.sh. This will invoke extconf.rb to generate some files, create the Makefile and run make.
+
+   cd - to return to the top-level directory
+
+   To build the ruby gem:
+   gem build rubywmq.gemspec
+
+   To build a binary gem:
+   gem build rubywmq.binary.gemspec
+
+   To install: gem install ./rubywmq<version>.gem
 
    For any questions, or to report build errors, submit a new Support Request:
    http://rubywmq.rubyforge.org
